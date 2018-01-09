@@ -8,20 +8,19 @@ public class EightBall {
     private ArrayList<String> answers;
 
 
-    public EightBall(List<String> answer_list){
+    public EightBall(ArrayList<String> answers){
 
-        this.answers = new ArrayList<String>(Arrays.asList(answer_list));
-//        this.answers = new ArrayList<>();
-//        this.answers.addAll(answers);
-        answers.add("Perhaps...");
-        answers.add("It could be.");
-        answers.add("Most decidedly so!");
+        this.answers = new ArrayList<String>(answers);
+
     }
 
     public String getAnswer(){
         Collections.shuffle(answers);
         return this.answers.get(0);
     }
+
+//    if you create a getAnswers getter, you need to create a copy of the
+//    answers ArrayList before returning the contents of that copy.
 
 
     public int getNumberOfAnswers() {
